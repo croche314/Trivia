@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+
+	<title>Trivia Game</title>
+
+	<!-- JQUERY + BOOTSTRAP -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<style>
+		body {
+			font-family: 'Comic Sans MS';
+			font-size: 18px;
+			margin: 50px;
+		}
+		.button {
+			display: block;
+			font-family: 'Comic Sans MS';
+			font-size: 15px;
+			background-color: #fff;
+			color: black;
+			border: 2px solid black;
+			box-shadow: 1px 1px 2px black;
+			text-decoration: none;
+			padding: 5px;
+		}
+		.label-lg {
+			font-size: 30px;
+		}
+		.center {
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="assets/app.js"></script>
+	<script src="assets/factory.js"></script>
+	<script src="assets/controllers.js"></script>
+</head>
+<body>
+	<div id="container">
+		<h1>Trivia Game</h1>
+		<a href="#!/" class="btn btn-default">Home</a>
+		<a href="#!/new/question" class="btn btn-default">Add a Question</a>
+		<a href="#!/logout" class="btn btn-default">Logout</a>
+
+	</div>
+	<div ng-view="">
+		
+	</div>
+</body>
+</html>

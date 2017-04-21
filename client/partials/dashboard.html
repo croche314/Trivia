@@ -1,0 +1,21 @@
+<h2 class="label label-success">Dashboard</h2>&nbsp;&nbsp;
+<span ng-if="username">Hello {{ username }}!</span>
+<br>
+<p ng-if="message" class="label label-danger label-lg">{{ message }}</p>
+<br><br>
+<a class="btn btn-primary btn-block label-lg" href="/#!/play">Play!</a>
+
+<br>
+
+<!-- Game Results Table -->
+<input type="text" ng-model="search_text" placeholder="filter...">
+<table class="table table-striped">
+	<tr>
+		<th>Name</th><th>Score</th><th>Percentage</th>
+	</tr>
+	<tr ng-repeat="game in all_games | orderBy:'-score' |filter:search_text">
+		<td>{{ game.player }}</td>
+		<td>{{ game.score }}/3</td>
+		<td>{{ game.percentage }}%</td>
+	</tr>
+</table>

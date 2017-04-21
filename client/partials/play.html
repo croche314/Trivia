@@ -1,0 +1,47 @@
+<p>Hi {{ username }}! Choose an answer for each question and click <i>Finish</i> when you're ready to see the results.</p>
+<form name="game_form" ng-submit="finishGame()" ng-model="game_form">
+	<div>
+		<p>
+			<h4 class="label label-warning">{{ game_questions[0].question_text }}</h4>
+			<br>
+			<!-- QUESTION 1 -->
+			<radiogroup>
+				<input type="radio" value="correct" name="answer1" ng-model="answer1" required>{{ game_questions[0].correct_answer }}
+				<br>
+				<input type="radio" value="wrong" name="answer1" ng-model="answer1">{{ game_questions[0].fake_answer1 }}
+				<br>
+				<input type="radio" value="incorrect" name="answer1" ng-model="answer1">{{ game_questions[0].fake_answer2 }}
+
+			</radiogroup>
+			<br>
+			<!-- QUESION 2 -->
+			<h4 class="label label-warning">{{ game_questions[1].question_text }}</h4>
+			<br>
+			<radiogroup>
+				<input type="radio" value="wrong" name="answer2" ng-model="answer2" required>{{ game_questions[1].fake_answer2 }}
+				<br>
+				<input type="radio" value="incorrect" name="answer2" ng-model="answer2">{{ game_questions[1].fake_answer1 }}
+				<br>
+				<input type="radio" value="correct" name="answer2" ng-model="answer2">{{ game_questions[1].correct_answer }}
+
+			</radiogroup>
+			<br>
+			<!-- QUESTION 3 -->
+			<h4 class="label label-warning">{{ game_questions[2].question_text }}</h4>
+			<br>
+			<radiogroup>
+				<input type="radio" value="incorrect" name="answer3" ng-model="answer3" required>{{ game_questions[2].fake_answer1 }}
+				<br>
+				<input type="radio" value="correct" name="answer3" ng-model="answer3">{{ game_questions[2].correct_answer }}
+				<br>
+				<input type="radio" value="wrong" name="answer3" ng-model="answer3">{{ game_questions[2].fake_answer2 }}
+
+			</radiogroup>
+		</p>
+	</div>
+	<p class="label label-danger" ng-if="game_form.$dirty && game_form.$invalid">
+		Please answer all questions before clicking <i>Finish</i>
+	</p>
+	<br><br>
+	<input class="btn btn-primary" type="submit" value="Finish">
+</form>
